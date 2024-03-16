@@ -1,19 +1,25 @@
 use stylus_sdk::{msg, prelude::*};
-use stylus_sdk::storage::{StorageAddress, StorageMap, StorageString};
+use stylus_sdk::prelude::sol_storage;
 
-#[solidity_storage]
-#[entrypoint]
-pub struct Voting {
-    votes: StorageMap<StorageAddress, StorageString>,
+sol_storage! {
+    pub struct Voting {
+        mapping(address => string) votes;
+    }
 }
+
+// #[solidity_storage]
+// #[entrypoint]
+// pub struct Voting {
+//     votes: StorageMap<StorageKey, StorageString>,
+// }
 
 #[external]
 impl Voting {
-    pub fn vote(&mut self, vote: StorageString) {
-        self.votes.insert(msg::sender(), vote);
+    pub fn vote(&mut self, vote: String) {
+        self.votes.insert(msg::sender(), vote.into());
     }
 
-    pub fn get_vote(&self) -> StorageString {
-        self.votes.get(msg::sender()).unwrap_or_default()
+    pub fn get_vote(&self) -> String {
+        self.votes.get(msg::sender())
     }
 }

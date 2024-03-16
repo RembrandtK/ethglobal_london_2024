@@ -16,14 +16,9 @@ use std::io::{BufRead, BufReader};
 use std::str::FromStr;
 use std::sync::Arc;
 
-/// Your private key file path.
-const PRIV_KEY_PATH: &str = "PRIV_KEY_PATH";
-
-/// Stylus RPC endpoint url.
-const RPC_URL: &str = "RPC_URL";
-
-/// Deployed pragram address.
-const STYLUS_PROGRAM_ADDRESS: &str = "STYLUS_PROGRAM_ADDRESS";
+const PRIV_KEY_PATH: &str = "/../../../testkey/stylus";
+const RPC_URL: &str = "https://stylus-testnet.arbitrum.io/rpc";
+const STYLUS_PROGRAM_ADDRESS: &str = "0xa766f1EbC4AaBEFFD5F3F2Fc4Fb589D4c85c2D93";
 
 #[tokio::main]
 async fn main() -> eyre::Result<()> {

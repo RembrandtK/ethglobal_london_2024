@@ -7,4 +7,4 @@ extern crate alloc;
 static ALLOC: mini_alloc::MiniAlloc = mini_alloc::MiniAlloc::INIT;
 
 pub mod counter;
-pub mod voting;
+// pub mod voting; // Cannot get this to work yet...
