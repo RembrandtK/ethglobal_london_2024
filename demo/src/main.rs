@@ -21,7 +21,11 @@ async fn main() {
 	.await
 	.unwrap();
 
-	let qrcode = QrCode::new(session.connect_url().to_string()).unwrap();
+    let qrstring = session.connect_url().to_string();
+
+    print!("QR code: {}", qrstring);
+
+	let qrcode = QrCode::new(qrstring).unwrap();
 
 	term.write_line(&format!(
 		"To continue, please scan the following QR code with your World App: {}",
