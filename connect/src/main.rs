@@ -7,7 +7,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let web3 = web3::Web3::new(http);
     let contract_address: Address = "0xa766f1EbC4AaBEFFD5F3F2Fc4Fb589D4c85c2D93".parse().unwrap();
 
-    let contract_abi: Vec<u8> = include_bytes!("../../chain/contract_abi.json").to_vec();
+    let contract_abi: Vec<u8> = include_bytes!("../../stylus/contract_abi.json").to_vec();
 
     println!("Contract ABI: {:?}", contract_abi);
     let contract = Contract::from_json(web3.eth(), contract_address, &contract_abi)?;
