@@ -11,9 +11,9 @@ async fn main() {
 	term.clear_screen().unwrap();
 
 	let session = idkit::Session::new(
-		AppId::from_str("app_ce4cb73cb75fc3b73b71ffb4de178410").unwrap(),
-		"test-action",
-		VerificationLevel::Orb,
+		AppId::from_str("app_staging_1b6fdd2b3ac74039a05bcd66c955a283").unwrap(),
+		"vote",
+		VerificationLevel::Device,
 		BridgeUrl::default(),
 		(),
 		None,
