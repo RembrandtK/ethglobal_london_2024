@@ -4,7 +4,6 @@ use indicatif::ProgressBar;
 use qrcode::{render::unicode, QrCode};
 use std::{str::FromStr, time::Duration};
 use tokio::time::sleep;
-use std::fmt;
 
 #[tokio::main]
 async fn main() {
